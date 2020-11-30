@@ -18,7 +18,10 @@ export default class SurveyController {
     try {
       const { name, description, questions } = req.body;
       if (!name) {
-        return res.status(400).json({ message: 'Question name is required' });
+        return res.status(400).json({ message: 'Survey name is required' });
+      }
+      if (!Array.isArray(questions)) {
+        return res.status(400).json({ message: 'Survey questions are required' });
       }
       const repository: Repository<Survey> = getRepository(Survey);
       const result: InsertResult = await repository.insert({ name, description, questions });
@@ -50,7 +53,7 @@ export default class SurveyController {
       }
 
       if (!Array.isArray(survey.response)) {
-        return res.status(400).json({ message: 'survey user response is required' });
+        return res.status(400).json({ message: 'survey user response are required' });
       }
 
       const repository: Repository<SurveyResponse> = getRepository(SurveyResponse);

@@ -23,3 +23,5 @@ npm run build
 ```
 node build/index.js
 ```
+
+### API document can be found [here](API.md)
