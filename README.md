@@ -9,7 +9,7 @@ npm install
 ### Transpile and hot-reloads for development
 
 ```
-npm start
+npm dev
 ```
 
 ### Transpiles and generates build dir for production
